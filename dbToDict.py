@@ -35,7 +35,11 @@ ENCODING_TO_CLASSES_FILE_NAME='encoding2classes.txt'
 DATA_KEY='data'
 LABELS_KEY='labels'
 PICKLED_DATA_FILE_NAME='dataDict.pkl'
-def add_data_dir_to_label(dataDict,directory,oneHotEncoding):
+
+
+#input: current data dictionray,the class which we want to add's directory, and its one hot encoding
+#output: it adds the relevant images and labels to dataDict.
+def add_class_info(dataDict,directory,oneHotEncoding):
 	file_names=os.listdir(directory)
 	label_as_row=oneHotEncoding.reshape(1,*oneHotEncoding.shape)
 	for file_name in file_names:
@@ -71,7 +75,7 @@ with open(ENCODING_TO_CLASSES_FILE_NAME, 'w') as f:
 		f.write(className+':'+str(oneHotEncoding)+'\n')
 		dataDict[className]=oneHotEncoding
 		dataDict[str(oneHotEncoding)]=className
-		add_data_dir_to_label(dataDict,className,oneHotEncoding)
+		add_class_info(dataDict,className,oneHotEncoding)
 		classIndex+=1
 with open(PICKLED_DATA_FILE_NAME,'wb') as f:
 	pickle.dump(dataDict,f)
