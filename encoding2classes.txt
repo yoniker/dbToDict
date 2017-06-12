@@ -1,0 +1,6 @@
+Bisley falafel:[ 1.  0.  0.  0.  0.  0.]
+Olive syrian:[ 0.  1.  0.  0.  0.  0.]
+Pickle small:[ 0.  0.  1.  0.  0.  0.]
+Bisley BBQ:[ 0.  0.  0.  1.  0.  0.]
+Pickle big:[ 0.  0.  0.  0.  1.  0.]
+Olive green:[ 0.  0.  0.  0.  0.  1.]
